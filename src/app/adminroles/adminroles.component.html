@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-light bg-light">
+        <a href="admin/productos" class="nav-link">Productos</a>
+        <a href="admin/roles" class="nav-link">Roles</a>
+        <a href="admin/sucursales" class="nav-link">Sucursales</a>
+        <a href="admin/trabajadores" class="nav-link">Trabajadores</a>
+        <a href="admin/vendedores" class="nav-link">Vendedores</a>
+        <a href="admin/rutas" class="nav-link">Rutas</a>
+    </nav>
+    <div class="row">
+        <div class="col-sm">
+            <h2>Entidades</h2>
+            <hr>
+            <div class="btn-group-vertical btn-group-lg">
+                <button (click)="selectProduct($event)" *ngFor="let element of roles;" class="btn btn-secondary"
+                    id="{{element[0]}}">
+                    {{element[0]}}
+                </button>
+            </div>
+        </div>
+        <div class="col-sm">
+            <h2>Edit</h2>
+            <div class="row">
+                <div class="col">
+                    <label>Nombre = {{currentRol[0]}}</label>
+                    <input id="input1" placeholder="Nuevo nombre">
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <label>Descripción = {{currentRol[1]}}</label>
+                    <input id="input1" placeholder="Nueva descripcion">
+                </div>
+                <div class="w-100">
+                    <div class="col">
+                        <button (click)="updateProduct($event)" class="btn btn-primary">
+                            Actualizar
+                        </button>
+                        <button (click)="deleteProduct($event)" class="btn btn-primary">
+                            Borrar
+                        </button>
+                    </div>
+                    <div class="row">
+                        <label>{{ editResponse }}</label>
+                        <label>{{ deleteResponse }}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <h2>Crear</h2>
+            <div class="col">
+                <input id="get1" placeholder="Nombre">
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <input id="get2" placeholder="Descripción">
+            </div>
+            <div class="w-100">
+                <div class="col">
+                    <button (click)="createProduct($event)" class="btn btn-primary">
+                        Crear
+                    </button>
+                </div>
+                <div class="row">
+                    <label>{{ createResponse }}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

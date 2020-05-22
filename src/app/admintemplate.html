@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm">
+            <h2>Entidades</h2>
+            <hr>
+            <button *ngFor="let element in elementarr; let i = index" id="{{id}}">
+                {{element.name}}
+            </button>
+        </div>
+
+        <div class="col-sm">Editar</div>
+        <div class="col-sm">Crear</div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-light bg-light">
+        <a href="admin/productos" class="nav-link">Productos</a>
+        <a href="admin/roles" class="nav-link">Roles</a>
+        <a href="admin/sucursales" class="nav-link">Sucursales</a>
+        <a href="admin/trabajadores" class="nav-link">Trabajadores</a>
+        <a href="admin/vendedores" class="nav-link">Vendedores</a>
+        <a href="admin/rutas" class="nav-link">Rutas</a>
+    </nav>
+    <div class="row">
+        <div class="col-sm">
+            <h2>Entidades</h2>
+            <hr>
+            <div class="btn-group-vertical btn-group-lg">
+                <button (click)="selectProduct($event)" *ngFor="let element of products;" class="btn btn-secondary"
+                    id="{{element.barcode}}">
+                    {{element.nombre}}
+                </button>
+            </div>
+        </div>
+        <div class="col-sm">
+            <h2>Edit</h2>
+            <div class="row">
+                <div class="col">
+                    <label>Barcode = {{currentProduct.barcode}}</label>
+                    <input id="input1" placeholder="Código de barras">
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <label>Nombre = {{currentProduct.nombre}}</label>
+                    <input id="input2" placeholder="Nombre">
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <label>Descripción = {{currentProduct.desc}}</label>
+                    <input id="input3" placeholder="Descripción">
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <label>Cantidad = {{currentProduct.cant}}</label>
+                    <input id="input4" placeholder="Cantidad">
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <label>Precio = {{currentProduct.precio}}</label>
+                    <input id="input5" placeholder="Precio">
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <label>Impuesto = {{currentProduct.impuesto}}</label>
+                    <input id="input6" placeholder="Impuesto">
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <label>Descuento = {{currentProduct.descuento}}</label>
+                    <input id="input7" placeholder="Descuento">
+                </div>
+                <div class="w-100">
+                    <div class="col">
+                        <button (click)="updateProduct($event)" class="btn btn-primary">
+                            Actualizar
+                        </button>
+                        <button (click)="deleteProduct($event)" class="btn btn-primary">
+                            Borrar
+                        </button>
+                    </div>
+                    <div class="row">
+                        <label>{{ editResponse }}</label>
+                        <label>{{ deleteResponse }}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <h2>Crear</h2>
+            <div class="col">
+                <input id="get1" placeholder="Código de barras">
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <input id="get2" placeholder="Nombre">
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <input id="get3" placeholder="Descripción">
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <input id="get4" placeholder="Cantidad">
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <input id="get5" placeholder="Precio">
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <input id="get6" placeholder="Impuesto">
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <input id="get7" placeholder="Descuento">
+            </div>
+            <div class="w-100">
+                <div class="col">
+                    <button (click)="createProduct($event)" class="btn btn-primary">
+                        Crear
+                    </button>
+                </div>
+                <div class="row">
+                    <label>{{ createResponse }}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
