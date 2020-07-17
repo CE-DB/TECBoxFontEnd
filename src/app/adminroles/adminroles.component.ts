@@ -9,7 +9,7 @@ import { Observable } from "rxjs"
 })
 export class AdminrolesComponent implements OnInit {
 
-  ENDPOINT = "https://tecbox.herokuapp.com/rol";
+  ENDPOINT = "https://tecbox.herokuapp.com/roles";
 
   roles = [];
   currentRol = [];
